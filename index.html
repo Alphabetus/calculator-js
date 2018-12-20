@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head doc -->
+  <head>
+    <!-- charset def -->
+    <meta charset="utf-8">
+    <!-- make responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- font awesome source > below bootsrap -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+      >
+    <!-- title -->
+    <title>JS Calculus</title>
+  </head>
+  <!-- /head doc -->
+
+  <!-- body doc -->
+  <body>
+
+    <!-- calc container -->
+    <section id="calculator_body" class="container-fluid justify-content-center bg-dark">
+
+      <!-- row 1 -->
+      <div class="row justify-content-center row_1">
+
+        <!-- col 1-->
+        <div class="col-12 col-md-6">
+
+          <div class="row h-100">
+          <!-- inner square -->
+          <div class="col-12 inner_square">
+
+            <!-- table -->
+            <table class="table text-center">
+
+              <!-- table row result -->
+              <tr>
+                <td id="result_box" class="align-middle" colspan="4">
+                  <div class="row m-auto">
+
+                    <!-- col 1 > reset -->
+                    <div class="col-2 text-left">
+                      <a id="btn_reset" href="#" class="btn btn-primary">
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+                    </div>
+                    <!-- /col 1 > reset -->
+
+                    <!-- col 2 > result -->
+                    <div class="col-10 text-right">
+                      <span id="result">0</span>
+                    </div>
+                    <!-- /col 2 > result -->
+                  </div>
+                </td>
+              </tr>
+              <!-- /table row result -->
+
+              <!-- table row hidden default -->
+              <tr>
+                <td id="output" colspan="4" class="text-right">
+                  <span id="output_display">
+
+                  </span>
+                </td>
+              </tr>
+              <!-- /table row hidden default -->
+
+              <!-- table row 0 -->
+              <tr>
+
+                <td>
+                  <a href="#" id="btn_plus" class="btn btn-primary btn_operation_class">
+                    <i class="fas fa-plus"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_minus" class="btn btn-primary btn_operation_class">
+                    <i class="fas fa-minus"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_multiply" class="btn btn-primary btn_operation_class">
+                    X
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_divide" class="btn btn-primary btn_operation_class">
+                    <i class="fas fa-divide"></i>
+                  </a>
+                </td>
+
+              </tr>
+              <!-- /table row 0 -->
+
+              <!-- table row 1 -->
+              <tr>
+
+                <td>
+                  <a href="#" id="btn_7" class="btn btn-primary">
+                    7
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_8" class="btn btn-primary">
+                    8
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_9" class="btn btn-primary">
+                    9
+                  </a>
+                </td>
+                <!-- equal button -->
+                <td rowspan="2">
+                  <a href="#" id="btn_equal" class="btn btn-primary">
+                    <i class="fas fa-equals"></i>
+                  </a>
+                </td>
+
+              </tr>
+              <!-- /table row 1 -->
+
+              <!-- table row 2 -->
+              <tr>
+
+                <td>
+                  <a href="#" id="btn_4" class="btn btn-primary">
+                    4
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_5" class="btn btn-primary">
+                    5
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_6" class="btn btn-primary">
+                    6
+                  </a>
+                </td>
+
+              </tr>
+              <!-- /table row 2 -->
+
+              <!-- table row 1 -->
+              <tr>
+
+                <td>
+                  <a href="#" id="btn_1" class="btn btn-primary">
+                    1
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_2" class="btn btn-primary">
+                    2
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_3" class="btn btn-primary">
+                    3
+                  </a>
+                </td>
+                <td>
+                  <a href="#" id="btn_0" class="btn btn-primary">
+                    0
+                  </a>
+                </td>
+              </tr>
+              <!-- /table row 1 -->
+
+            </table>
+            <!-- /table -->
+
+          </div>
+          <!-- /inner square -->
+          </div>
+
+        </div>
+        <!-- /col 1 -->
+
+      </div>
+      <!-- /row 1 -->
+
+    </section>
+    <!-- /calc container -->
+
+    <!-- script call ####### ####### ####### ####### ####### ####### ####### -->
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.stellar.js" type="text/javascript"></script>
+    <!-- custom > load below all -->
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <!-- /script call ####### ###### ####### ####### ####### ####### ####### -->
+  </body>
+  <!-- /body doc -->
+</html>
