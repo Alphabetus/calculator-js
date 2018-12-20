@@ -3,92 +3,33 @@ $(document).ready(function(){
 var operation; // defines the mathematical operation we are about to perform
 var storedNumber; // stores the number on mathematical opeation set
 var change; // defines when we are changing for the second parcel
+
 // startup
 showOperations(true, null);
-  // number button listeners 0 to 9
-  $("#btn_0").on('click', function(){
+  // number listeners
+  $(".btn_number").on('click', function (){
+    var btnNumber = Number($(this).data("number"));
     var result = $("#result").text();
     var resultINT = Number(result);
-    insertNumber(0,resultINT);
-  });
-  $("#btn_1").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(1,resultINT);
-  });
-  $("#btn_2").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(2,resultINT);
-  });
-  $("#btn_3").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(3,resultINT);
-  });
-  $("#btn_4").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(4,resultINT);
-  });
-  $("#btn_5").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(5,resultINT);
-  });
-  $("#btn_6").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(6,resultINT);
-  });
-  $("#btn_7").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(7,resultINT);
-  });
-  $("#btn_8").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(8,resultINT);
-  });
-  $("#btn_9").on('click', function(){
-    var result = $("#result").text();
-    var resultINT = Number(result);
-    insertNumber(9,resultINT);
+    insertNumber(btnNumber, resultINT);
+    // log
+    console.log("button #" + btnNumber + " " + resultINT);
   });
   // airthmetic operations buttons
-  // plus button
-  $("#btn_plus").on('click', function(){
-    showOperations(false, "sum");
+  $(".btn_operation_class").on('click', function (){
+    operation = $(this).data("op");
+    showOperations(false, operation);
     storedNumber = Number($("#result").text());
-    operation = "sum";
     change = 1;
-  });
-  // minus button
-  $("#btn_minus").on('click', function(){
-    showOperations(false, "subtract");
-    storedNumber = Number($("#result").text());
-    operation = "subtract";
-    change = 1;
-  });
-  // multiply button
-  $("#btn_multiply").on('click', function(){
-    showOperations(false, "multiply");
-    storedNumber = Number($("#result").text());
-    operation = "multiply";
-    change = 1;
-  });
-  // divide button
-  $("#btn_divide").on('click', function(){
-    showOperations(false, "divide");
-    storedNumber = Number($("#result").text());
-    operation = "divide";
-    change = 1;
+    // log
+    console.log("operation set is " + operation);
   });
   // equal button
   $("#btn_equal").on('click', function(){
     var out = calculateTotal(Number($("#result").text()), operation);
     $("#result").text(out);
+    // log
+    console.log("result is " + out);
   });
   // reset button
   $("#btn_reset").on('click', function(){
@@ -97,6 +38,8 @@ showOperations(true, null);
     storedNumber = null;
     $("#result").text(0);
     showOperations(true, null);
+    // log
+    console.log("reset calculator");
   });
 
 // FUNCTIONS
@@ -106,11 +49,15 @@ function showOperations(bool, op){
     $("#output_display").text();
     $("#output").hide();
     $(".btn_operation_class").show();
+    // log
+    console.log("display operators & hide operation display");
   }
   else{
     $(".btn_operation_class").hide();
     $("#output_display").text("calculator defined to " + op);
     $("#output").show();
+    // log
+    console.log("hide operators & set operation display");
   }
 };
 // calculate general
@@ -136,27 +83,39 @@ function calculateTotal(resultCurrent, operation){
   change = 1;
   storedNumber = null;
   showOperations(true);
+  // log
+  console.log("calculation is done");
   return total;
 };
 // insert button on click
 function insertNumber(number, resultCurrent){
+var newParcel = null;
   // validate if we need to change for the second parcel
   if (change != null){
+    newParcel = true;
     $("#result").html(0);
-    resultCurrent = 0;
+    // resultCurrent = 0;
     change = null;
+    // log
+    console.log("change parcel detected");
   }
-  // validate if 0
-  if (resultCurrent == 0){
+  // validate if new parcel
+  if (resultCurrent === 0 || newParcel === true){
+    // validate if zero just for log
+    if (resultCurrent === 0){
+      console.log("calculator was zero");
+    }
     // there is no number on the calc
     $("#result").html(number);
-    // console.log("zero");
+    // log
+    console.log("start new parcel");
   }
   else{
     // there is already a number on the calc. add new digit and send it back.
     var out = resultCurrent.toString() + number.toString();
     $("#result").html(out);
-    // console.log("zero nao");
+    // log
+    console.log("same number parcel");
   }
 };
 // no return
